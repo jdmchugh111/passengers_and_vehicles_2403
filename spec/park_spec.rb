@@ -50,4 +50,20 @@ RSpec.describe Park do
 
         expect(park.list_passengers).to eq([charlie, jude, taylor])
     end
+
+    it "can calculate revenue generated" do
+        park = Park.new("Rocky Mountain NP", 15)
+        vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
+        charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
+        jude = Passenger.new({"name" => "Jude", "age" => 20})   
+        taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+
+        vehicle_1.add_passenger(charlie)
+        vehicle_1.add_passenger(jude)
+        vehicle_1.add_passenger(taylor)
+
+        park.add_vehicle(vehicle_1)
+
+        expect(park.revenue_generated).to eq(30)
+    end
 end
