@@ -12,4 +12,13 @@ class Park
     def add_vehicle(vehicle)
         @vehicles << vehicle
     end
+
+    def list_passengers
+        passenger_array = []
+        @vehicles.each do |vehicle|
+            passenger_array << vehicle.passengers
+        end
+        passenger_array.flatten
+    end
+
 end
