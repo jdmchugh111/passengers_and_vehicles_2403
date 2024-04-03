@@ -26,4 +26,17 @@ RSpec.describe Vehicle do
 
         expect(vehicle.model).to eq("Civic")
     end
+
+    it ".speeding? defaults to false" do
+        vehicle = Vehicle.new("2001", "Honda", "Civic")
+
+        expect(vehicle.speeding?).to eq(false)
+    end
+
+    it ".speeding? returns true if .speed is called on a vehicle" do
+        vehicle = Vehicle.new("2001", "Honda", "Civic")
+        vehicle.speed
+
+        expect(vehicle.speeding?).to eq(true)
+    end
 end
