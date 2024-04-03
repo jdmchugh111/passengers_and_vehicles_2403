@@ -44,4 +44,17 @@ class Park
         adult_names.sort
     end
 
+    def list_minors
+        minors_list = []
+        list_passengers.each do |passenger|
+            if passenger.adult? == false
+                minors_list << passenger
+            end
+        end
+        minor_names = minors_list.map do |passenger|
+            passenger.name
+        end
+        minor_names.sort
+    end
+
 end
