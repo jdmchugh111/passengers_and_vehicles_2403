@@ -31,4 +31,17 @@ RSpec.describe Passenger do
 
         expect(taylor.adult?).to eq(false)
     end
+
+    it "returns false as default if .driver? is called" do
+        charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+
+        expect(charlie.driver?).to eq(false)
+    end
+
+    it "if .drive is called on a passenger, .driver? returns true" do
+        charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+        charlie.drive
+
+        expect(charlie.driver?).to eq(true)
+    end
 end
