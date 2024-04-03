@@ -21,4 +21,17 @@ RSpec.describe Park do
 
         expect(park.price).to eq(15)
     end
+
+    it "can list all vehicles that entered the park" do
+        park = Park.new("Rocky Mountain NP", 15)
+        vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
+        vehicle_2 = Vehicle.new("2009", "Toyota", "Tacoma")
+        vehicle_3 = Vehicle.new("2013", "Toyota", "RAV4")
+
+        park.add_vehicle(vehicle_1)
+        park.add_vehicle(vehicle_2)
+        park.add_vehicle(vehicle_3)
+
+        expect(park.vehicles).to eq([vehicle_1, vehicle_2, vehicle_3])
+    end
 end
