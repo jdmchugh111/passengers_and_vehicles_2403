@@ -24,4 +24,10 @@ class Park
         passenger_array.flatten
     end
 
+    def list_names
+        list_passengers.map do |passenger|
+            passenger.name
+        end
+    end
+
 end
