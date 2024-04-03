@@ -25,9 +25,23 @@ class Park
     end
 
     def list_names
-        list_passengers.map do |passenger|
+        names_list = list_passengers.map do |passenger|
             passenger.name
         end
+        names_list.sort
+    end
+
+    def list_adults
+        adult_list = []
+        list_passengers.each do |passenger|
+            if passenger.adult?
+                adult_list << passenger
+            end
+        end
+        adult_names = adult_list.map do |passenger|
+            passenger.name
+        end
+        adult_names.sort
     end
 
 end
